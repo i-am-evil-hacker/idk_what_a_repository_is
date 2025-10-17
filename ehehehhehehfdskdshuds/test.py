@@ -1,6 +1,6 @@
 import winsound as w
 l=list("abcdefghijklmnopqrstuvwxyz")
-import sys as s
+import sys 
 import time
 def animate(frames:list,fps:float=60,Title:bool=False):
     a=0
@@ -25,6 +25,16 @@ def animate(frames:list,fps:float=60,Title:bool=False):
                 a=len(frames)-1
                 #for alternate animation ie,|\-/ at the same time at diff animate times ig
 frames = ["[=     ]", "[ =    ]", "[  =   ]", "[   =  ]", "[    = ]", "[     =]", "[    = ]", "[   =  ]", "[  =   ]", "[ =    ]"]
-animate(frames, fps=5)
-
-animate(l)
+def animate1(txt:str=" Hello World! ",cd:float=0.1,number_of_times:int=10,dir:str="left"):
+    try:
+        while True:
+            sys.stdout.write("\t\t\t"+(txt*number_of_times) + "\r")
+            sys.stdout.flush()
+            time.sleep(0.1)
+            if dir=="left":
+                txt=txt[1:]+txt[0]
+            elif dir=="right":
+                txt=txt[-1]+txt[:-1]
+    except KeyboardInterrupt:
+        print("\nAnimation Stopped.")  
+animate1()
