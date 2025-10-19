@@ -106,6 +106,21 @@ def print_vs_write():
     plt.grid(True)
     plt.show()
 def anime(frames:list,fps:float=100):
+    """
+    The function `anime` displays a sequence of frames at a specified frames per second (fps) rate.
+    
+    :param frames: The `frames` parameter is a list of strings representing individual frames of an
+    animation. Each string in the list corresponds to a frame that will be displayed in sequence to
+    create the animation
+    :type frames: list
+    :param fps: The `fps` parameter in the `anime` function stands for frames per second, which
+    determines the speed at which the frames from the `frames` list are displayed. The default value for
+    `fps` is set to 100 frames per second, defaults to 100
+    :type fps: float (optional)
+    """
+    #?
+    #!
+    #*
     fps=1/fps
     while True:
         for frame in frames:
@@ -123,7 +138,9 @@ for i in range(20):
     import sys
 import time
 import threading
-
+j=1
+print(j)
+print(j)
 def anime1(frames: list, fps: float = 10):
     delay = 1 / fps
     while True:
@@ -143,3 +160,4 @@ for i in range(20):
     sys.stdout.write(f"Counting: {i}\n")
     sys.stdout.flush()
     time.sleep(0.5)
+    print(help)
