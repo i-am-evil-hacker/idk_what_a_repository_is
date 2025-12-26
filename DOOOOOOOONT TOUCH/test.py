@@ -1,7 +1,11 @@
-import time
-for i in range(5):
-    print("-"*10)
-    print("|"+("0"*i)+" "*(8-i)+"|")
-    print("_"*10)
-    print("\n"*3)
-    time.sleep(0.5)
+def fib_rec(lim:int):
+    if lim in (1,2):
+        return 1
+    else:
+        return fib_rec(lim-1)+fib_rec(lim-2)
+def fib(lim:int):
+    a,b=0,1
+    for _ in range(lim):
+        a,b=b,a+b
+    return a
+print(fib_rec(10),fib(10))
