@@ -501,12 +501,16 @@ class Player:
     def diff_equalizer(self, Difficulty: str) -> None:
         self.difficulty: str = Difficulty
         if self.difficulty == "Hard":
-            self.hp *= 1.5
-            self.mp *= 1.5
-            self.dmg *= 1.5
-            self.dex *= 1.5
+            self.hp   *= 1.5
+            self.mp   *= 1.5
+            self.dmg  *= 1.5
+            self.dex  *= 1.5
             self.luck *= 1/e
             #! try to make the difficulty setting more impactful
+            if hasattr(self, "_difficulty_applied"):
+                return
+            self._difficulty_applied = True
+
 
     def lvl_up(self) -> int:
         lvl_counter: int = 0
