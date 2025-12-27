@@ -1,16 +1,11 @@
-from time import sleep,perf_counter
-
-def fib(x):
-    a=0
-    b=1
-    n=0
-    c=perf_counter()
-    while a<x:
-        print(n,".",a)
-        sleep(0)
-        n+=1
-        a,b=b,b+a
-    d=perf_counter()
-    e=d-c
-    print(e,"seconds")
-fib(10**10000)
+def fib_rec(lim:int)->int:
+    if lim in (1,2):
+        return 1
+    else:
+        return fib_rec(lim-1)+fib_rec(lim-2)
+def fib(lim:int)->int:
+    a,b=0,1
+    for _ in range(lim):
+        a,b=b,a+b
+    return a
+print(fib_rec(10),fib(10))
