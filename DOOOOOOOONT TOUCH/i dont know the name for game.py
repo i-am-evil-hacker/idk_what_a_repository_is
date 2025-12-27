@@ -5,7 +5,7 @@ import threading
 #im so tired trying to code just 400 lines bruh
 #alll of this code is made from if statements
 #i gotta learn how to actually code
-def effect(text,delay=0.001):
+def effect(text:str,delay:float=0.001):
      for char in text:
           sys.stdout.write(char)
           sys.stdout.flush()
@@ -18,6 +18,7 @@ def easter_egg():
 #create a function for ebery game mechanic im llaly af
 # please listendubfyvcxhjb 
 regress_count=0
+title=""
 #create smth with admin and titles and stuff
 #add sex?
 #remeber max limit should be 2^32
@@ -96,11 +97,11 @@ while regress_count<(2**10):
     f_boss_mini_dmg = random.randint(100,150)#minion dmg for final stage
     f_boss_mini_hp = random.randint (125,1775)#minion hp for final stage
     effect("""  _____                     _   _            ______ _   _ _______ ______ _____    _                
- |  __ \                   | | | |          |  ____| \ | |__   __|  ____|  __ \  | |               
- | |__) | __ ___  ___ ___  | |_| |__   ___  | |__  |  \| |  | |  | |__  | |__) | | | _____ _   _   
- |  ___/ '__/ _ \/ __/ __| | __| '_ \ / _ \ |  __| | . ` |  | |  |  __| |  _  /  | |/ / _ \ | | |  
- | |   | | |  __/\__ \__ \ | |_| | | |  __/ | |____| |\  |  | |  | |____| | \ \  |   <  __/ |_| |_ 
- |_|   |_|  \___||___/___/  \__|_| |_|\___| |______|_| \_|  |_|  |______|_|  \_\ |_|\_\___|\__, (_)
+ |  __ \\                   | | | |          |  ____| \\ | |__   __|  ____|  __ \\  | |               
+ | |__) | __ ___  ___ ___  | |_| |__   ___  | |__  |  \\| |  | |  | |__  | |__) | | | _____ _   _   
+ |  ___/ '__/ _ \\/ __/ __| | __| '_ \\ / _ \\ |  __| | . ` |  | |  |  __| |  _  /  | |/ / _ \\ | | |  
+ | |   | | |  __/\\__ \\__ \\ | |_| | | |  __/ | |____| |\\  |  | |  | |____| | \\ \\  |   <  __/ |_| |_ 
+ |_|   |_|  \\___||___/___/  \\__|_| |_|\\___| |______|_| \\_|  |_|  |______|_|  \\_\\ |_|\\_\\___|\\__, (_)
                                                                                             __/ |  
                                                                                            |___/   """)#coolest thing i haave did yet
     #now it is lol
@@ -247,13 +248,13 @@ while regress_count<(2**10):
         if a==1:
             print("""          /\\
          /**\\
-        /****\   /\\
-       /      \ /**\\
-      /  /\    /    \        /\    /\  /\      /\            /\/\/\  /\\
-     /  /  \  /      \      /  \/\/  \/  \  /\/  \/\  /\  /\/ / /  \/  \\
-    /  /    \/ /\     \    /    \ \  /    \/ /   /  \/  \/  \  /    \   \\
-   /  /      \/  \/\   \  /      \    /   /    \\
-__/__/_______/___/__\___\__________________________________________________""")
+        /****\\   /\\
+       /      \\ /**\\
+      /  /\\    /    \\        /\\    /\\  /\\      /\\            /\\/\\/\\  /\\
+     /  /  \\  /      \\     /  \\/\\/  \\/  \\  /\\/  \\/\\  /\\  /\\/ / /  \\/  \\
+    /  /    \\/ /\\     \\    /    \\ \\  /    \\/ /   /  \\/  \\/  \\  /    \\   \\
+   /  /      \\/  \\/\\   \\  /      \\    /   /    \\
+__/__/_______/___/__\\___\\__________________________________________________""")
             print("you try to climb the mountain")
             str_check=dmg*dex*luck
             print(str_check)
@@ -264,7 +265,7 @@ __/__/_______/___/__\___\__________________________________________________""")
                 b=int(input("1.run away\n2.go to the town"))
                 if b == 1:
                     print("you chose to flee death\you have earned the title'SURVIVALIST'.")
-                    title=title+",SURVIVALIST"
+                    title += ",SURVIVALIST"
                     exp=exp+1
                     dex=dex+10
                     hp=hp+5
